@@ -1,12 +1,13 @@
-/****************************************************************************** 
+/**************************************************************************************************************************************************************** 
+The performance of large WSUS deployments will degrade over time if the WSUS database isn't maintained properly. 
+This T-SQL script in this article can be run by SQL SA to reindex and defragment WSUS databases. 
 This sample T-SQL script performs basic maintenance tasks on SUSDB 
 1. Identifies indexes that are fragmented and defragments them. For certain 
    tables, a fill-factor is set in order to improve insert performance. 
-   Based on MSDN sample at http://msdn2.microsoft.com/en-us/library/ms188917.aspx 
-   and tailored for SUSDB requirements 
+   Based on MSDN sample at http://msdn2.microsoft.com/en-us/library/ms188917.aspx and tailored for SUSDB requirements 
 2. Updates potentially out-of-date table statistics. 
-******************************************************************************/ 
- 
+P.S: It shouldn't be used on WSUS 2.0 databases.
+*********************************************************************************************************************************************************/ 
 USE SUSDB; 
 GO 
 SET NOCOUNT ON; 
